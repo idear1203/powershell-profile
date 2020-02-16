@@ -33,6 +33,40 @@ function gg {
 	& git grep -n -i @args | foreach-object { $_ -replace '(\d+):','$1 ' }  
 }
 
+function gstatus {
+	& git status
+}
+
+set-alias gs gstatus
+
+function gadd {
+	& git add @args
+}
+
+function gcommit {
+	& git commit @args
+}
+
+function gdiff {
+	& git diff @args
+}
+
+function gpush {
+	& git push @args
+}
+
+function gpull {
+	& git pull @args
+}
+
+function git-show-file($commit) {
+	if (-not $commit) {
+		$commit = 'HEAD'
+	}
+
+	git diff-tree --no-commit-id --name-only -r $commit
+}
+
 function get-git-ignored {
 	git ls-files . --ignored --exclude-standard --others
 }

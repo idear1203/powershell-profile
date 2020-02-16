@@ -98,6 +98,8 @@ foreach ( $includeFile in ("aws", "defaults", "openssl", "aws", "unix", "develop
 
 set-location '~/Code'
 
-write-output 'Mike profile loaded.'
+write-output 'Good good study, day day Up...'
+Write-output 'Start happy hacking now...'
+
 
 
