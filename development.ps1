@@ -59,6 +59,12 @@ function gpull {
 	& git pull @args
 }
 
+function gcheckout {
+	& git checkout @args
+}
+
+set-alias gco gcheckout
+
 function git-show-file($commit) {
 	if (-not $commit) {
 		$commit = 'HEAD'
