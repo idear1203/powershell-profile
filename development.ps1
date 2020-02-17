@@ -63,6 +63,10 @@ function gcheckout {
 	& git checkout @args
 }
 
+function gbranch {
+	& git branch @args
+}
+
 set-alias gco gcheckout
 
 function git-show-file($commit) {
