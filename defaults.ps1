@@ -43,13 +43,13 @@ function limit-HomeDirectory($Path) {
 
 # Must be called 'prompt' to be used by pwsh 
 # https://github.com/gummesson/kapow/blob/master/themes/bashlet.ps1
-function prompt {
-  $realLASTEXITCODE = $LASTEXITCODE
-  Write-Host $(limit-HomeDirectory("$pwd")) -ForegroundColor Yellow -NoNewline
-  Write-Host " $" -NoNewline
-  $global:LASTEXITCODE = $realLASTEXITCODE
-  Return " "
-}
+#function prompt {
+#  $realLASTEXITCODE = $LASTEXITCODE
+#  Write-Host $(limit-HomeDirectory("$pwd")) -ForegroundColor Yellow -NoNewline
+#  Write-Host " $" -NoNewline
+#  $global:LASTEXITCODE = $realLASTEXITCODE
+#  Return " "
+#}
 
 # Make $lastObject save the last object output
 # From http://get-powershell.com/post/2008/06/25/Stuffing-the-output-of-the-last-command-into-an-automatic-variable.aspx
@@ -58,8 +58,9 @@ function out-default {
 }
 
 # If you prefer oh-my-posh
-# Import-Module posh-git
-# Import-Module oh-my-posh
+Import-Module posh-git
+$GitPromptSettings.DefaultPromptAbbreviateHomeDirectory = $true
+
 
 function rename-extension($newExtension){
   Rename-Item -NewName { [System.IO.Path]::ChangeExtension($_.Name, $newExtension) }
