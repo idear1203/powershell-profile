@@ -67,6 +67,10 @@ function gbranch {
 	& git branch @args
 }
 
+function gremote {
+	& git remote @args
+}
+
 set-alias gco gcheckout
 
 function git-show-file($commit) {
